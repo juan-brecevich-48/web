@@ -1,0 +1,52 @@
+body {
+    padding-top: 56px;
+    background: #E9ECEF;
+}
+
+.hero {
+    padding: 60px 0;
+}
+
+section {
+    opacity: 1;
+}
+
+.project-card {
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+section[id] {
+    scroll-margin-top: 70px;
+}
+
+.primary-border {
+    border-color: #1E3A5F;
+}
+
+.primary-bg {
+    background: #1E3A5F;
+}
+
+.secondary-border {
+    border-color: #64748B;
+}
+
+.secondary-bg {
+    background: #64748B;
+}
+
+.custom-background {
+    background: #E9ECEF;
+}
+
+.custom-text {
+    color: #1F2937;
+}
