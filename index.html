@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juan Ignacio Brecevich</title>
-    <!-- Bootstrap 5 CSS (CDN oficial) -->
+
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons (opcional pero recomendado) -->
+
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Tu CSS personal (para sobreescribir o agregar) -->
+    
     <style>
         body {
-            padding-top: 70px;
+            padding-top: 56px;
         }
 
         .hero {
@@ -31,10 +33,22 @@
         footer a {
             text-decoration: none;
         }
+
+        section[id] {
+            scroll-margin-top: 70px;
+        }
+
+        .section-1 {
+            background: var(--bs-light);
+        }
+
+        .section-2 {
+            background: var(--bs-border-color);
+        }
     </style>
 </head>
 
-<body class="bg-light">
+<body>
 
     <!-- Barra de navegación fija -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -55,7 +69,7 @@
     </nav>
 
     <!-- Sección Hero (Inicio) -->
-    <section id="inicio" class="hero text-center bg-light">
+    <section id="inicio" class="section-1 hero text-center">
         <div class="container">
             <h1 class="display-4">Hola, soy <strong>Juan Ignacio Brecevich</strong></h1>
             <p class="lead">Analista Programador Universitario | Desarrollador Web</p>
@@ -63,7 +77,7 @@
     </section>
 
     <!-- Sobre mí -->
-    <section id="sobre-mi" class="py-5 bg-primary-subtle">
+    <section id="sobre-mi" class="section-2 py-5">
         <div class="container">
             <h2 class="text-center mb-4">Sobre mí</h2>
             <div class="row">
@@ -81,22 +95,22 @@
                         <i class="bi bi-download"></i> Descarga CV
                     </a>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-5 mt-4 mt-md-0">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <i class="bi bi-window-sidebar text-primary me-2"></i>
+                            <i class="bi bi-window-sidebar text-success-emphasis me-2"></i>
                             Portales de Gestión
                         </li>
                         <li class="list-group-item">
-                            <i class="bi bi-pc-display-horizontal text-primary me-2"></i>
+                            <i class="bi bi-pc-display-horizontal text-success-emphasis me-2"></i>
                             Aplicaciones de escritorio
                         </li>
                         <li class="list-group-item">
-                            <i class="bi bi-globe text-primary me-2"></i>
+                            <i class="bi bi-globe text-success-emphasis me-2"></i>
                             Páginas Web
                         </li>
                         <li class="list-group-item">
-                            <i class="bi bi-phone text-primary me-2"></i>
+                            <i class="bi bi-phone text-success-emphasis me-2"></i>
                             Diseño móvil
                         </li>
                     </ul>
@@ -106,15 +120,15 @@
     </section>
 
     <!-- Proyectos (cards de Bootstrap) -->
-    <section id="proyectos" class="bg-light py-5">
+    <section id="proyectos" class="section-1 py-5">
         <div class="container">
             <h2 class="text-center mb-4">Algunos de mis proyectos</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card project-card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">Pronu</h5>
-                            <p class="card-text ">
+                            <h5 class="card-header bg-body">Pronu</h5>
+                            <p class="card-text pt-3">
                                 Aplicación de escritorio para centralizar información de pacientes y sus consultas
                                 nutricionales.
                             </p>
@@ -124,8 +138,8 @@
                 <div class="col-md-4 mb-4">
                     <div class="card project-card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">S.O.R.A.</h5>
-                            <p class="card-text">
+                            <h5 class="card-header bg-body">S.O.R.A.</h5>
+                            <p class="card-text pt-3">
                                 Sistematización de Observaciones y Recomendaciones de Auditoría (SORA)
                                 es una aplicación web para el Honorable Tribunal de Cuentas de la Provincia de Buenos
                                 Aires
@@ -136,8 +150,8 @@
                 <div class="col-md-4 mb-4">
                     <div class="card project-card h-100">
                         <div class="card-body">
-                            <h5 class="card-title">S.G.A.</h5>
-                            <p class="card-text">
+                            <h5 class="card-header bg-body">S.G.A.</h5>
+                            <p class="card-text pt-3">
                                 Sistema de Gestión de Alquileres (SGA) es una aplicación web para la
                                 administración del stock de maquinarias y alquileres.
                             </p>
@@ -149,7 +163,7 @@
     </section>
 
     <!-- Contacto (formulario básico) -->
-    <section id="contacto" class="py-5 bg-primary-subtle">
+    <section id="contacto" class="section-2 py-5">
         <div class="container">
             <h2 class="text-center mb-4">Contáctame</h2>
             <div class="row justify-content-center">
@@ -157,11 +171,11 @@
                     <form id="mailto-form">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" required>
+                            <input type="text" class="form-control border border-secondary" id="nombre" required>
                         </div>
                         <div class="mb-3">
                             <label for="mensaje" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="mensaje" rows="5" required></textarea>
+                            <textarea class="form-control border border-secondary" id="mensaje" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-100">Enviar mensaje</button>
                     </form>
@@ -170,7 +184,7 @@
                         revisar y enviar.
                     </div>
                     <div class="text-center mt-4">
-                        <a href="https://github.com/juani48" class="btn btn-dark me-2">
+                        <a href="https://github.com/juan-brecevich-48" class="btn btn-dark me-2">
                             <i class="bi bi-github"></i>
                             GitHub</a>
                         <a href="https://linkedin.com/in/juan-ignacio-brecevich-a97327410/" class="btn btn-primary">
