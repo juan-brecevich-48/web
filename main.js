@@ -2,27 +2,33 @@ emailjs.init({
     publicKey: '65VL7490KAhpkzypw'
 });
 
-document.getElementById('mailto-form').addEventListener('submit', function (e) {
+document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();  // Evita que recargue la página
 
     const nombre = document.getElementById('nombre').value.trim();
     const correo = document.getElementById('correo').value.trim();
-    let mensaje = document.getElementById('mensaje').value.trim();
+    let message = document.getElementById('mensaje').value.trim();
     if (!nombre || !correo) {
         showToast('Por favor, completa tu nombre y correo electrónico.', 'danger');
         return;
     }
 
-    if (!mensaje) {
-        mensaje = `Hola, soy ${nombre}.\n\nQuisiera contactarte para hablar sobre una posible proyecto. Cuando tengas un momento, por favor revisa mi mensaje. ¡Gracias!`;
+    if (!message) {
+        message = `Hola, soy ${nombre}.\n\nQuisiera contactarte para hablar sobre una posible proyecto. Cuando tengas un momento, por favor revisa mi mensaje. ¡Gracias!`;
     }
 
     // Dirección de correo
     const destinatario = 'juan.brecevich.48@gmail.com';
     const asunto = `Contacto desde mi portfolio`;
 
+    const templateParams = {
+        name: nombre,
+        email: correo,
+        message: message
+    };
+
     // Enviar el formulario
-    emailjs.sendForm('contact_service', 'contact_template', this)
+    emailjs.sendForm('contact_service', 'contact_template', templateParams)
         .then(() => {
             showToast('Correo enviado correctamente');
             // Resetear el formulario
